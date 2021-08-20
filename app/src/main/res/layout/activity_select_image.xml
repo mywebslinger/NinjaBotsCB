@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_color"
+    tools:context=".ui.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/toolbar_header"
+            android:gravity="center"
+            android:theme="@style/ToolbarStyle" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <com.ninjabotscoloringbookapp.view.CustomTextView
+                    android:id="@+id/text_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/komikax"
+                    android:gravity="center"
+                    android:text="@string/select_image"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:layout_gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white"
+                    app:outerShadowRadius="1dp"
+                    app:strokeColor="#0A6775"
+                    android:layout_toStartOf="@+id/btn_offline"
+                    app:strokeJoinStyle="miter"
+                    app:strokeWidth="0.8dp"/>
+
+
+
+                <ImageView
+                    android:id="@+id/btn_offline"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/switch_on"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    />
+
+
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_above="@+id/ll_ads_view">
+
+            <TextView
+                android:id="@+id/txt_no_data"
+                android:text="@string/no_data"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/ll_ads_view"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:layout_gravity="bottom">
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_color"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/admob_banner_id">
+            </com.google.android.gms.ads.AdView>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>
